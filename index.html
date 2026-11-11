@@ -18,6 +18,92 @@
     </section>
     <section>
         <!-- Section 1 Poon-->
+
+<section
+id="newsletter"
+class="flex w-full items-center justify-center bg-white
+       md:px-6 lg:px-0"
+>
+<!-- Newsletter Background -->
+<div
+  class="flex h-[325px] w-full flex-col items-center
+         bg-[#E7F5FF] px-5 pt-[32px] text-center
+         md:h-[360px] md:max-w-[1117px] md:rounded-[30px]
+         md:pt-[68px]"
+>
+  <!-- Heading -->
+  <h2
+    class="max-w-[310px] text-[26px] font-bold
+           leading-[30px] tracking-[-0.5px] text-[#0B1554]
+           md:max-w-none md:text-[36px] md:leading-[44px]"
+  >
+    Sign up to our newsletter
+  </h2>
+
+  <!-- Description -->
+  <p
+    class="mt-[20px] max-w-[310px] text-[12px]
+           leading-[20px] text-[#7A809C]
+           md:mt-[16px] md:max-w-[400px] md:text-[16px]
+           md:leading-[28px]"
+  >
+    Receive latest news, updates and many other
+    <br class="hidden md:block" />
+    news every week.
+  </p>
+
+  <!-- Email Form -->
+  <form
+    class="mt-[26px] flex h-[66px] w-full max-w-[480px]
+           items-center rounded-full bg-white
+           pl-[24px] pr-[10px]
+           md:mt-[30px]"
+    onsubmit="event.preventDefault()"
+  >
+    <label for="newsletter-email" class="sr-only">
+      Email address
+    </label>
+
+    <input
+      id="newsletter-email"
+      type="email"
+      name="email"
+      placeholder="Enter your email address"
+      required
+      class="min-w-0 flex-1 bg-transparent
+             text-[14px] text-[#0B1554]
+             placeholder:text-[#C9CDDD]
+             outline-none"
+    />
+
+    <!-- Submit Button -->
+    <button
+      type="submit"
+      aria-label="Subscribe to newsletter"
+      class="flex h-[46px] w-[46px] shrink-0
+             items-center justify-center
+             rounded-full bg-[#2E43D6] text-white
+             transition hover:bg-[#2435AE]"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="m9 18 6-6-6-6" />
+      </svg>
+    </button>
+  </form>
+</div>
+</section>
+
     </section>
 </body>
 </html>
