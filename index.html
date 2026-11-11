@@ -1,0 +1,770 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+    <!-- เมจิเพิ่มฟอนต์นี้เข้ามา -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>QuickSpace</title>
+    <style>
+      /* Tailwind already handles spacing. This only sets the font. */
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-[#1a144b]">
+    <!-- Section 1 Win: navbar + hero -->
+    <section class="bg-gradient-to-b from-[#eef2ff] to-white">
+      <!-- Navbar -->
+      <header class="mx-auto max-w-6xl px-6 py-5">
+        <div class="flex items-center justify-between">
+          <!-- Logo -->
+          <a href="#" class="flex items-center gap-2 text-xl font-extrabold">
+            <span class="flex gap-1" aria-hidden="true">
+              <span class="mt-1 h-1.5 w-1.5 rounded-full bg-[#1a144b]"></span>
+              <span class="h-1.5 w-1.5 rounded-full bg-[#1a144b]"></span>
+              <span class="mt-1 h-1.5 w-1.5 rounded-full bg-[#1a144b]"></span>
+            </span>
+            QuickSpace
+          </a>
+
+          <!-- Links shown on laptop and desktop -->
+          <nav class="hidden items-center gap-8 text-sm font-medium text-gray-600 lg:flex">
+            <a href="#" class="hover:text-[#1a144b]">Company</a>
+            <a href="#" class="hover:text-[#1a144b]">Feature</a>
+            <a href="#" class="hover:text-[#1a144b]">Pricing</a>
+            <a href="#" class="hover:text-[#1a144b]">Log In</a>
+            <a
+              href="#"
+              class="rounded-lg bg-[#3B5AFE] px-5 py-2.5 font-semibold text-white hover:bg-[#2f49e6]"
+            >
+              Try Free
+            </a>
+          </nav>
+
+          <!-- Menu button shown only on phone -->
+          <button
+            id="menu-btn"
+            class="flex h-10 w-10 items-center justify-center rounded-lg lg:hidden"
+            aria-label="Open menu"
+          >
+            <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Phone menu. It starts hidden. The script at the bottom opens it. -->
+        <div id="mobile-menu" class="mt-4 hidden rounded-2xl bg-white p-4 shadow-lg lg:hidden">
+          <a href="#" class="block py-2 text-sm font-medium text-gray-700">Company</a>
+          <a href="#" class="block py-2 text-sm font-medium text-gray-700">Feature</a>
+          <a href="#" class="block py-2 text-sm font-medium text-gray-700">Pricing</a>
+          <a href="#" class="block py-2 text-sm font-medium text-gray-700">Log In</a>
+          <a
+            href="#"
+            class="mt-2 block rounded-lg bg-[#3B5AFE] py-2.5 text-center text-sm font-semibold text-white"
+          >
+            Try Free
+          </a>
+        </div>
+      </header>
+
+      <!-- Hero: text on the left, picture on the right -->
+      <div
+        class="mx-auto flex max-w-6xl flex-col-reverse items-center gap-10 px-6 pb-8 pt-8 lg:flex-row lg:pt-14"
+      >
+        <!-- Left side: words and buttons -->
+        <div class="w-full text-center lg:w-1/2 lg:text-left">
+          <span class="inline-block rounded-full bg-[#e8ebfb] px-4 py-1.5 text-sm font-medium text-[#6d72a0]">
+            Welcome QuickSpace
+          </span>
+
+          <h1 class="mt-6 text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">
+            Satisfied Customer<br />
+            Is the Best Business<br />
+            Strategy
+          </h1>
+
+          <p class="mx-auto mt-5 max-w-md text-sm leading-relaxed text-gray-500 lg:mx-0 lg:text-base">
+            Backed with vast experience and fully up to date skills
+            set, at Enuke Software offer the best in class
+            E-Prescription solution
+          </p>
+
+          <div class="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
+            <a
+              href="#"
+              class="w-full rounded-lg bg-[#3B5AFE] px-8 py-3 text-center font-semibold text-white shadow-lg shadow-blue-200 hover:bg-[#2f49e6] sm:w-auto"
+            >
+              Try Free
+            </a>
+
+            <a href="#" class="flex items-center gap-3 font-semibold">
+              <span class="flex h-9 w-9 items-center justify-center rounded-full border-2 border-[#1a144b]">
+                <!-- small play triangle -->
+                <svg viewBox="0 0 24 24" class="ml-0.5 h-3 w-3" fill="currentColor">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </span>
+              View Demo
+            </a>
+          </div>
+        </div>
+
+        <!-- Right side: person and floating cards -->
+        <div class="relative mx-auto h-[460px] w-full max-w-md lg:w-1/2">
+          <!-- Soft blue square behind the person -->
+          <div class="absolute left-1/2 top-28 h-72 w-64 -translate-x-1/2 rounded-[2rem] bg-[#d7e3fb]"></div>
+
+          <!-- The person is drawn with simple shapes -->
+          <svg viewBox="0 0 300 440" class="absolute bottom-0 left-1/2 h-[430px] w-[300px] -translate-x-1/2">
+            <!-- pants -->
+            <rect x="112" y="328" width="34" height="100" rx="12" fill="#3B82F6" />
+            <rect x="156" y="328" width="34" height="100" rx="12" fill="#2563EB" />
+
+            <!-- shirt -->
+            <path
+              d="M96 218 C108 186 128 174 150 174 C172 174 192 186 204 218 L216 328 L84 328 Z"
+              fill="#A78BFA"
+            />
+
+            <!-- neck -->
+            <rect x="137" y="160" width="26" height="22" rx="8" fill="#E8B896" />
+
+            <!-- blue hair sits behind the face -->
+            <ellipse cx="150" cy="104" rx="52" ry="60" fill="#4DA3FF" />
+            <!-- face covers the lower part, so the blue left on top looks like hair -->
+            <ellipse cx="150" cy="128" rx="40" ry="44" fill="#F6C7A4" />
+
+            <!-- eyes and smile -->
+            <ellipse cx="136" cy="124" rx="4" ry="5" fill="#243044" />
+            <ellipse cx="166" cy="124" rx="4" ry="5" fill="#243044" />
+            <path
+              d="M136 148 Q150 162 166 148"
+              fill="none"
+              stroke="#E08A6A"
+              stroke-width="2.5"
+              stroke-linecap="round"
+            />
+
+            <!-- crossed arms -->
+            <path
+              d="M90 220 C70 262 112 302 162 310 C180 312 186 296 168 288 C128 274 104 246 114 216 Z"
+              fill="#9176E4"
+            />
+            <path
+              d="M210 218 C234 258 196 298 148 304 C130 306 124 290 142 284 C182 270 202 244 190 214 Z"
+              fill="#B79AF6"
+            />
+            <!-- hands -->
+            <ellipse cx="156" cy="294" rx="15" ry="11" fill="#F6C7A4" transform="rotate(-18 156 294)" />
+            <ellipse cx="176" cy="280" rx="13" ry="10" fill="#F8D0B0" transform="rotate(12 176 280)" />
+          </svg>
+
+          <!-- Card: Great Designer -->
+          <div class="absolute left-0 top-8 z-10 flex items-center gap-2 rounded-xl bg-white px-3 py-2 shadow-lg">
+            <svg viewBox="0 0 40 40" class="h-8 w-8">
+              <circle cx="20" cy="20" r="20" fill="#F6D3BE" />
+              <circle cx="20" cy="18" r="8" fill="#F3B892" />
+              <path d="M8 16 Q20 4 32 16 Q28 10 20 10 Q12 10 8 16 Z" fill="#6B3A22" />
+              <circle cx="17" cy="18" r="1" fill="#333" />
+              <circle cx="23" cy="18" r="1" fill="#333" />
+            </svg>
+            <div>
+              <p class="text-xs font-semibold">Great Designer</p>
+              <p class="text-[11px] tracking-wider text-amber-400">★★★★★</p>
+            </div>
+          </div>
+
+          <!-- Card: Gavin Henry -->
+          <div
+            class="absolute right-0 top-56 z-10 flex items-center gap-2 rounded-xl bg-white px-3 py-2 shadow-lg"
+          >
+            <svg viewBox="0 0 40 40" class="h-9 w-9">
+              <circle cx="20" cy="20" r="20" fill="#F59E4A" />
+              <circle cx="20" cy="16" r="6" fill="#FDE7D0" />
+              <ellipse cx="20" cy="30" rx="10" ry="7" fill="#FDE7D0" />
+            </svg>
+            <div class="pr-2">
+              <p class="text-xs font-semibold">Gavin Henry</p>
+              <p class="text-[11px] text-gray-400">1m ago</p>
+            </div>
+            <span class="flex h-6 w-6 items-center justify-center rounded-full bg-[#7C6BF2] text-xs font-bold text-white">
+              1
+            </span>
+          </div>
+
+          <!-- Card: Notification -->
+          <div class="absolute bottom-6 left-0 z-10 flex items-center gap-3 rounded-xl bg-white px-3 py-2 shadow-lg">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-[#ffe8e0]">
+              <svg viewBox="0 0 24 24" class="h-5 w-5 text-[#f27b63]" fill="currentColor">
+                <path
+                  d="M12 2a6 6 0 00-6 6v3.1c0 .7-.3 1.4-.8 1.9L4 14.5V16h16v-1.5l-1.2-1.5a2.7 2.7 0 01-.8-1.9V8a6 6 0 00-6-6zm0 20a2.5 2.5 0 002.4-2h-4.8A2.5 2.5 0 0012 22z"
+                />
+              </svg>
+            </span>
+            <div>
+              <p class="text-[11px] text-gray-400">Notification</p>
+              <p class="text-xs font-medium leading-snug text-gray-700">
+                Send a message to<br />
+                Ilya Zinchenko
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Company logos under the hero -->
+      <div class="mx-auto mt-6 flex max-w-5xl flex-wrap items-center justify-center gap-x-12 gap-y-6 px-6 pb-16 text-gray-400">
+        <div class="flex items-center gap-2">
+          <span class="text-lg font-bold tracking-tight text-gray-500">A|B</span>
+          <span class="text-[11px] font-semibold leading-tight">CALEY<br />PEACE</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-lg font-bold text-gray-500">DS</span>
+          <span class="text-[11px] font-semibold leading-tight">DESIGN<br />STUDIO</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-lg font-bold text-gray-500">HR</span>
+          <span class="text-[11px] font-semibold leading-tight">HARRISON<br />INDUSTRY CO</span>
+        </div>
+        <div class="text-center">
+          <p class="font-serif text-lg leading-none text-gray-500">Barbecue</p>
+          <p class="text-[10px] tracking-widest">ESTD 1960</p>
+        </div>
+      </div>
+    </section>
+
+        <!-- end of Section 1 Win: navbar + hero -->
+
+    <section>
+         
+<!-- Section 2 Meji-->
+<div class="bg-white px-6 pt-20 pb-24 font-['Poppins']">
+    <div class="mx-auto max-w-5xl">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-2xl font-semibold text-[#0f0f4d] sm:text-[28px]">Perfect Solution For Your Business</h2>
+        <p class="mt-6 text-sm leading-8 text-[#6b6b80] sm:text-[15px]">
+          Graphs displaying your performance for metrics like follower evolution, average rate per post and reach and impressions to give you the insights.
+        </p>
+      </div>
+ 
+      <div class="mt-20 grid gap-6 md:grid-cols-3 md:gap-0">
+        <!-- card 1 -->
+        <article class="rounded-lg p-6 transition hover:bg-white hover:shadow-[0_20px_50px_rgba(30,30,90,0.10)] sm:p-10">
+          <div class="flex h-20 w-20 items-center justify-center rounded-2xl bg-[#fdeee6]">
+            <svg class="h-9 w-9 text-[#f08a54]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M5 3h14v11l-7 7-7-7V3z"/><path d="M9 8h6M9 12h6"/></svg>
+          </div>
+          <h3 class="mt-8 text-xl font-medium text-[#0f0f4d]">Grow Your Business</h3>
+          <p class="mt-4 text-sm leading-7 text-[#6b6b80]">Take us wherever you go so that you know what’s going on with your money at all times.</p>
+          <a href="#" class="mt-6 inline-flex items-center gap-1 text-sm font-medium text-[#6b6b80] hover:opacity-80">Get Started <span aria-hidden="true">»</span></a>
+        </article>
+ 
+        <!-- card 2 (highlighted) -->
+        <article class="rounded-lg bg-white p-6 shadow-[0_20px_50px_rgba(30,30,90,0.10)] transition sm:p-10 md:-mt-6 md:pt-16 md:pb-14">
+          <div class="flex h-20 w-20 items-center justify-center rounded-2xl bg-[#e8ebfc]">
+            <svg class="h-9 w-9 text-[#5b61e6]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><rect x="8" y="9" width="8" height="6" rx="1"/></svg>
+          </div>
+          <h3 class="mt-8 text-xl font-medium text-[#0f0f4d]">Drive More Sales</h3>
+          <p class="mt-4 text-sm leading-7 text-[#6b6b80]">Take us wherever you go so that you know what’s going on with your money at all times.</p>
+          <a href="#" class="mt-6 inline-flex items-center gap-1 text-sm font-medium text-[#6b6b80] hover:opacity-80">Get Started <span aria-hidden="true">»</span></a>
+        </article>
+ 
+        <!-- card 3 -->
+        <article class="rounded-lg p-6 transition hover:bg-white hover:shadow-[0_20px_50px_rgba(30,30,90,0.10)] sm:p-10">
+          <div class="flex h-20 w-20 items-center justify-center rounded-2xl bg-[#fdf3d0]">
+            <svg class="h-9 w-9 text-[#f5b83d]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-4 3-6.5 7-6.5s7 2.5 7 6.5"/></svg>
+          </div>
+          <h3 class="mt-8 text-xl font-medium text-[#0f0f4d]">Handled By Expert</h3>
+          <p class="mt-4 text-sm leading-7 text-[#6b6b80]">Take us wherever you go so that you know what’s going on with your money at all times.</p>
+          <a href="#" class="mt-6 inline-flex items-center gap-1 text-sm font-medium text-[#6b6b80] hover:opacity-80">Get Started <span aria-hidden="true">»</span></a>
+        </article>
+      </div>
+    </div>
+  </div>
+
+<div class="bg-linear-to-b from-white to-[#F0F4FF] px-6 pt-20 pb-0 font-['Poppins']">
+    <div class="mx-auto max-w-5xl text-center">
+      <span class="inline-block rounded-md bg-[#e9ebfd] px-6 py-2 text-xs font-medium text-[#5b61e6]">
+        Discover &amp; Explore
+      </span>
+      <h2 class="mt-3 text-2xl font-semibold text-[#0f0f4d] sm:text-[28px]">
+        Join An Attractive &amp; Personaliozed
+      </h2>
+      <p class="mx-auto mt-6 max-w-2xl text-sm leading-8 text-[#6b6b80] sm:text-[15px]">
+        Graphs displaying your performance for metrics like follower evolution, average rate per post and reach and impressions to give you the insights.
+      </p>
+ 
+      <div class="relative mx-auto mt-16 max-w-3xl">
+        <!-- Dashboard (รูปที่ 2) -->
+        <div class="rounded-[28px] bg-white p-3 shadow-[0_20px_50px_rgba(30,30,90,0.10)] sm:p-4">
+          <img src="img-meiji/dashboard.jpg" alt="Belanjo dashboard overview" class="block w-full rounded-2xl" loading="lazy">
+        </div>
+        <!-- Sales card ลอย (รูปที่ 3) -->
+        <img src="img-meiji/bargraph.png" alt="Sales chart"
+             class="absolute -bottom-0 -left-4 w-28 drop-shadow-xl sm:bottom-12 sm:-left-24 sm:w-44 md:w-52" loading="lazy">
+      </div>
+    </div>
+  </div>
+        
+    </section>
+    <section>
+      <!-- Section 1 Ko-->
+    </section>
+    <section>
+      <!-- Section 1 Poon-->
+<section class="bg-white px-5 py-12 sm:px-8 sm:py-16 lg:px-12 lg:py-20">
+    <div class="mx-auto max-w-5xl">
+      <header class="relative mb-8 pl-12 sm:mb-12 sm:pl-16">
+        <span
+          aria-hidden="true"
+          class="absolute left-0 top-0 flex h-12 w-12 items-center justify-center rounded-full bg-sky-500 text-4xl font-bold text-white sm:-top-3 sm:h-20 sm:w-20 sm:text-5xl"
+        >“</span>
+  
+        <h2 class="relative pt-2 text-3xl leading-tight font-semibold text-[#10164f] sm:text-5xl">
+          What Our Customer<br>
+          are Saying
+        </h2>
+      </header>
+  
+      <div class="grid grid-cols-1 divide-y divide-slate-200 md:grid-cols-2 md:divide-x md:divide-y-0">
+        <article class="py-6 md:py-0 md:pr-8 lg:pr-12">
+          <h3 class="text-xl leading-relaxed font-medium text-[#10164f] sm:text-2xl">
+            Great Services with Good Quality Photographers PhotoScape
+          </h3>
+  
+          <p class="mt-4 text-sm leading-7 text-slate-500 sm:text-base">
+            I truly have nothing but the highest praise and appreciation for all that you did for us.
+            Saving me on the video montage projection was huge, and even more important the amazing pictures.
+          </p>
+  
+          <div class="mt-6 flex items-center gap-4">
+            <img 
+            src="img-ko/pricillia-profile.png"
+            alt="Pricillia Makalew"
+            class="h-12 w-12 shrink-0 rounded-full object-cover"
+>
+            <div>
+              <p class="font-semibold text-[#10164f]">Pricillia Makalew</p>
+              <p class="mt-1 text-sm text-slate-500">EhyaScape Client</p>
+            </div>
+          </div>
+        </article>
+  
+        <article class="py-6 md:py-0 md:pl-8 lg:pl-12">
+          <h3 class="text-xl leading-relaxed font-medium text-[#10164f] sm:text-2xl">
+            Really love the Fast Delivery Photos File Service. Just 48 Hours. It’s Crazy!
+          </h3>
+  
+          <p class="mt-4 text-sm leading-7 text-slate-500 sm:text-base">
+            I truly have nothing but the highest praise and appreciation for all that you did for us.
+            Saving me on the video montage projection was huge, and even more important the amazing pictures.
+          </p>
+  
+          <div class="mt-6 flex items-center gap-4">
+            <div class="mt-6 flex items-center gap-4">
+                <img
+                  src="img-ko/dany-olmo-profile.png"
+                  alt="Dany Olmo"
+                  class="h-12 w-12 shrink-0 rounded-full object-cover"
+                >
+                <div>
+                  <p class="font-semibold text-[#10164f]">Dany Olmo</p>
+                  <p class="mt-1 text-sm text-slate-500">EhyaScape Client</p>
+                </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+</section>
+  
+  <!-- Pricing -->
+  <section class="bg-[#f8f9ff] px-5 py-12 sm:px-8 sm:py-16 lg:px-12 lg:py-20">
+    <div class="mx-auto max-w-6xl">
+      <header class="mx-auto max-w-3xl text-center">
+        <h2 class="text-2xl font-bold text-[#10164f] sm:text-3xl">
+          Expand your options with a subscription
+        </h2>
+  
+        <p class="mt-4 text-sm leading-7 text-slate-500 sm:mt-5 sm:text-lg">
+          Graphs displaying your performance for metrics like follower evolution, average rate
+          per post and reach and impressions to give you the insights.
+        </p>
+  
+        <div class="mt-6 flex items-center justify-center gap-3 text-sm font-medium text-slate-500 sm:mt-7 sm:gap-4 sm:text-base">
+          <span>Bill Monthly</span>
+  
+          <label class="relative inline-flex cursor-pointer items-center">
+            <input
+              type="checkbox"
+              class="peer sr-only"
+              checked
+              aria-label="Choose annual billing"
+            >
+            <span class="h-7 w-14 rounded-full bg-emerald-400 transition peer-focus-visible:ring-4 peer-focus-visible:ring-emerald-200"></span>
+            <span class="absolute left-1 h-5 w-5 rounded-full bg-white shadow transition-transform peer-checked:translate-x-7"></span>
+          </label>
+  
+          <span>Bill Annually</span>
+        </div>
+      </header>
+  
+      <div class="mt-8 grid grid-cols-1 gap-5 sm:mt-10 md:grid-cols-3 md:gap-6">
+        <!-- Base -->
+        <article class="flex flex-col rounded-2xl border border-slate-100 bg-white p-5 shadow-sm sm:p-7">
+          <h3 class="text-2xl font-bold text-[#10164f]">Base</h3>
+          <p class="mt-4 leading-7 text-slate-500">Free start for your project on our platform.</p>
+  
+          <div class="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <span class="text-4xl font-bold text-[#10164f]">$0</span>
+            <span class="text-sm font-medium text-slate-500">Per User / Per Year</span>
+          </div>
+  
+          <hr class="my-6 border-slate-100">
+  
+          <ul class="flex-1 space-y-4 text-sm text-slate-500">
+            <li>🔵 Access to editing all blocks</li>
+            <li>🔵 Editing blocks together</li>
+            <li>🔵 Access to all premium icons</li>
+            <li>🔵 A dedicated domain</li>
+            <li>🔵 Ability to integrate with CMS</li>
+          </ul>
+  
+          <a href="#try-free" class="mt-7 rounded-xl bg-blue-100 px-4 py-4 text-center font-medium text-blue-700 hover:bg-blue-200">
+            Try for Free
+          </a>
+        </article>
+  
+        <!-- Standard -->
+        <article class="flex flex-col rounded-2xl border border-slate-100 bg-white p-5 shadow-lg sm:p-7">
+          <h3 class="text-2xl font-bold text-[#10164f]">Standard</h3>
+          <p class="mt-4 leading-7 text-slate-500">For a small company that wants to show what it’s worth.</p>
+  
+          <div class="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <span class="text-4xl font-bold text-[#10164f]">$300</span>
+            <span class="text-sm font-medium text-slate-500">Per User / Per Year</span>
+          </div>
+  
+          <hr class="my-6 border-slate-100">
+  
+          <ul class="flex-1 space-y-4 text-sm text-slate-500">
+            <li>🔵 Access to editing all blocks</li>
+            <li>🔵 Editing blocks together</li>
+            <li>🔵 Access to all premium icons</li>
+            <li>🔵 A dedicated domain</li>
+            <li>🔵 Ability to integrate with CMS</li>
+          </ul>
+  
+          <a href="#start-trial" class="mt-7 rounded-xl bg-indigo-700 px-4 py-4 text-center font-medium text-white hover:bg-indigo-800">
+            Start 14 Days Free Trial
+          </a>
+        </article>
+  
+        <!-- Unlimited -->
+        <article class="flex flex-col rounded-2xl border border-slate-100 bg-white p-5 shadow-sm sm:p-7">
+          <h3 class="text-2xl font-bold text-[#10164f]">Unlimited</h3>
+          <p class="mt-4 leading-7 text-slate-500">For a large company that wants to achieve maximum returns.</p>
+  
+          <div class="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <span class="text-4xl font-bold text-[#10164f]">$600</span>
+            <span class="text-sm font-medium text-slate-500">Per User / Per Year</span>
+          </div>
+  
+          <hr class="my-6 border-slate-100">
+  
+          <ul class="flex-1 space-y-4 text-sm text-slate-500">
+            <li>🔵 Access to editing all blocks</li>
+            <li>🔵 Editing blocks together</li>
+            <li>🔵 Access to all premium icons</li>
+            <li>🔵 A dedicated domain</li>
+            <li>🔵 Ability to integrate with CMS</li>
+          </ul>
+  
+          <a href="#start-trial" class="mt-7 rounded-xl bg-blue-100 px-4 py-4 text-center font-medium text-blue-700 hover:bg-blue-200">
+            Start 14 Days Free Trial
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+    <section>
+        <!-- Section 1 Poon-->
+
+<section
+id="newsletter"
+class="flex w-full items-center justify-center bg-white
+       md:px-6 lg:px-0"
+>
+<!-- Newsletter Background -->
+<div
+  class="flex h-[325px] w-full flex-col items-center
+         bg-[#E7F5FF] px-5 pt-[32px] text-center
+         md:h-[360px] md:max-w-[1117px] md:rounded-[30px]
+         md:pt-[68px]"
+>
+  <!-- Heading -->
+  <h2
+    class="max-w-[310px] text-[26px] font-bold
+           leading-[30px] tracking-[-0.5px] text-[#0B1554]
+           md:max-w-none md:text-[36px] md:leading-[44px]"
+  >
+    Sign up to our newsletter
+  </h2>
+
+  <!-- Description -->
+  <p
+    class="mt-[20px] max-w-[310px] text-[12px]
+           leading-[20px] text-[#7A809C]
+           md:mt-[16px] md:max-w-[400px] md:text-[16px]
+           md:leading-[28px]"
+  >
+    Receive latest news, updates and many other
+    <br class="hidden md:block" />
+    news every week.
+  </p>
+
+  <!-- Email Form -->
+  <form
+    class="mt-[26px] flex h-[66px] w-full max-w-[480px]
+           items-center rounded-full bg-white
+           pl-[24px] pr-[10px]
+           md:mt-[30px]"
+    onsubmit="event.preventDefault()"
+  >
+    <label for="newsletter-email" class="sr-only">
+      Email address
+    </label>
+
+    <input
+      id="newsletter-email"
+      type="email"
+      name="email"
+      placeholder="Enter your email address"
+      required
+      class="min-w-0 flex-1 bg-transparent
+             text-[14px] text-[#0B1554]
+             placeholder:text-[#C9CDDD]
+             outline-none"
+    />
+
+    <!-- Submit Button -->
+    <button
+      type="submit"
+      aria-label="Subscribe to newsletter"
+      class="flex h-[46px] w-[46px] shrink-0
+             items-center justify-center
+             rounded-full bg-[#2E43D6] text-white
+             transition hover:bg-[#2435AE]"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="m9 18 6-6-6-6" />
+      </svg>
+    </button>
+  </form>
+</div>
+</section>
+
+    </section>
+
+    <script>
+      // Phone only: show or hide the menu when the button is clicked
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuBtn.addEventListener("click", function () {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>
+
+<!-- Footer Section - Poon -->
+<footer id="footer" class="w-full bg-white text-[#0B1554]">
+    <!-- Desktop Footer -->
+    <div class="mx-auto hidden max-w-[1117px] px-6 pt-[96px] pb-[38px] md:block xl:px-0">
+      <div class="grid grid-cols-[1.35fr_1fr_0.7fr_1fr] gap-10">
+        <!-- Brand and Contact -->
+        <div>
+          <a href="#" class="flex items-center text-[26px] font-bold tracking-[-1px]">
+            <span class="mr-1 text-[#3646D8]">•••</span>QuickSpace
+          </a>
+          <div class="mt-[76px] space-y-[24px] text-[15px] text-[#747993]">
+            <a href="mailto:quickspace@mail.com" class="flex items-center gap-4">
+              <svg class="h-[18px] w-[18px]" fill="none" stroke="currentColor"
+                stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                <path d="m3 7 9 6 9-6"/>
+              </svg>
+              quickspace@mail.com
+            </a>
+            <a href="tel:548457369555" class="flex items-center gap-4">
+              <svg class="h-[18px] w-[18px]" fill="none" stroke="currentColor"
+                stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.5 3a2 2 0 0 1-.6 1.7L7.1 10a16 16 0 0 0 6.9 6.9l1.6-1.9a2 2 0 0 1 1.7-.6l3 .5a2 2 0 0 1 1.7 2Z"/>
+              </svg>
+              548 457 3695 55
+            </a>
+          </div>
+        </div>
+        <!-- Home -->
+        <div>
+          <h3 class="mb-[40px] text-[17px] font-semibold">Home</h3>
+          <ul class="space-y-[22px] text-[14px] text-[#747993]">
+            <li><a href="#">Accesibility</a></li>
+            <li><a href="#">Certification</a></li>
+            <li><a href="#">Knowledge Base</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">User Group</a></li>
+          </ul>
+        </div>
+        <!-- Pages -->
+        <div>
+          <h3 class="mb-[40px] text-[17px] font-semibold">Pages</h3>
+          <ul class="space-y-[22px] text-[14px] text-[#747993]">
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Communities</a></li>
+            <li><a href="#">Webinars</a></li>
+            <li><a href="#">Videos</a></li>
+          </ul>
+        </div>
+        <!-- Address -->
+        <div>
+          <h3 class="mb-[40px] text-[17px] font-semibold">Our Address</h3>
+  
+          <div class="flex items-start gap-3 text-[14px] leading-[24px] text-[#747993]">
+            <svg class="mt-1 h-[17px] w-[17px] shrink-0" fill="none"
+              stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+              aria-hidden="true">
+              <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/>
+              <circle cx="12" cy="10" r="2.5"/>
+            </svg>
+            <p>London, New area<br />road 04, England</p>
+          </div>
+          <div class="mt-[42px] flex items-center gap-[18px] text-[17px] font-bold text-[#747993]">
+            <a href="#" aria-label="Google">G</a>
+            <a href="#" aria-label="Twitter">♥</a>
+            <a href="#" aria-label="Instagram">◎</a>
+            <a href="#" aria-label="LinkedIn" class="text-[13px]">in</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Bottom -->
+      <div class="mt-[128px] flex items-center justify-between text-[12px] text-[#747993]">
+        <p>Copyright ©2021 QuickSpace. All Rights Reserved</p>
+        <nav aria-label="Footer navigation" class="flex gap-[30px]">
+          <a href="#">Home</a>
+          <a href="#">Team</a>
+          <a href="#">Privecy policy</a>
+          <a href="#">Contact</a>
+        </nav>
+      </div>
+    </div>
+  
+    <!-- Mobile Footer -->
+    <div class="mx-auto max-w-[375px] px-[18px] pt-[76px] pb-[42px] md:hidden">
+      <!-- Logo -->
+      <a href="#" class="flex items-center text-[30px] font-bold tracking-[-1px]">
+        <span class="mr-1 text-[#7044FF]">•••</span>QuickSpace
+      </a>
+  
+      <!-- Description -->
+      <p class="mt-[25px] text-[12px] leading-[29px] text-[#888CB4]">
+        Winged moving moveth created for shall and a divide the their days
+        male midst shall hath doesn't won't for. Midst life.Over a great night.
+      </p>
+  
+      <!-- Social -->
+      <div class="mt-[30px] flex gap-[12px]">
+        <a href="#" aria-label="Facebook"
+          class="flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#EDF0FF] text-[14px] font-bold text-[#3446D6]">f</a>
+        <a href="#" aria-label="Twitter"
+          class="flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#EDF0FF] text-[14px] font-bold text-[#3446D6]">♥</a>
+        <a href="#" aria-label="LinkedIn"
+          class="flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#EDF0FF] text-[12px] font-bold text-[#3446D6]">in</a>
+        <a href="#" aria-label="YouTube"
+          class="flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#EDF0FF] text-[12px] font-bold text-[#3446D6]">▶</a>
+      </div>
+  
+      <!-- Accordions -->
+      <div class="mt-[48px] divide-y divide-[#EFF0F5]">
+        <details class="group py-[22px]">
+          <summary class="flex cursor-pointer list-none items-center justify-between text-[16px] font-medium [&::-webkit-details-marker]:hidden">
+            Customer Support
+            <svg class="h-4 w-4 transition-transform group-open:rotate-180"
+              fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </summary>
+          <ul class="space-y-3 pt-5 text-[14px] text-[#747993]">
+            <li><a href="#">Accesibility</a></li>
+            <li><a href="#">Certification</a></li>
+            <li><a href="#">Knowledge Base</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">User Group</a></li>
+          </ul>
+        </details>
+  
+        <details class="group py-[22px]">
+          <summary class="flex cursor-pointer list-none items-center justify-between text-[16px] font-medium [&::-webkit-details-marker]:hidden">
+            Quick Links
+            <svg class="h-4 w-4 transition-transform group-open:rotate-180"
+              fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </summary>
+          <ul class="space-y-3 pt-5 text-[14px] text-[#747993]">
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Communities</a></li>
+          </ul>
+        </details>
+  
+        <details class="group py-[22px]">
+          <summary class="flex cursor-pointer list-none items-center justify-between text-[16px] font-medium [&::-webkit-details-marker]:hidden">
+            Resources
+            <svg class="h-4 w-4 transition-transform group-open:rotate-180"
+              fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </summary>
+          <ul class="space-y-3 pt-5 text-[14px] text-[#747993]">
+            <li><a href="#">Webinars</a></li>
+            <li><a href="#">Videos</a></li>
+          </ul>
+        </details>
+      </div>
+  
+      <!-- Copyright -->
+      <p class="mt-[36px] text-center text-[13px] text-[#888CB4]">
+        Copyright ©2020 Quicklinks
+      </p>
+    </div>
+  </footer>
+  
