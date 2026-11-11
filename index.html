@@ -4,20 +4,263 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>QuickSpace</title>
+    <style>
+      /* Tailwind already handles spacing. This only sets the font. */
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+    </style>
   </head>
-<body>
+  <body class="bg-white text-[#1a144b]">
+    <!-- Section 1 Win: navbar + hero -->
+    <section class="bg-gradient-to-b from-[#eef2ff] to-white">
+      <!-- Navbar -->
+      <header class="mx-auto max-w-6xl px-6 py-5">
+        <div class="flex items-center justify-between">
+          <!-- Logo -->
+          <a href="#" class="flex items-center gap-2 text-xl font-extrabold">
+            <span class="flex gap-1" aria-hidden="true">
+              <span class="mt-1 h-1.5 w-1.5 rounded-full bg-[#1a144b]"></span>
+              <span class="h-1.5 w-1.5 rounded-full bg-[#1a144b]"></span>
+              <span class="mt-1 h-1.5 w-1.5 rounded-full bg-[#1a144b]"></span>
+            </span>
+            QuickSpace
+          </a>
+
+          <!-- Links shown on laptop and desktop -->
+          <nav class="hidden items-center gap-8 text-sm font-medium text-gray-600 lg:flex">
+            <a href="#" class="hover:text-[#1a144b]">Company</a>
+            <a href="#" class="hover:text-[#1a144b]">Feature</a>
+            <a href="#" class="hover:text-[#1a144b]">Pricing</a>
+            <a href="#" class="hover:text-[#1a144b]">Log In</a>
+            <a
+              href="#"
+              class="rounded-lg bg-[#3B5AFE] px-5 py-2.5 font-semibold text-white hover:bg-[#2f49e6]"
+            >
+              Try Free
+            </a>
+          </nav>
+
+          <!-- Menu button shown only on phone -->
+          <button
+            id="menu-btn"
+            class="flex h-10 w-10 items-center justify-center rounded-lg lg:hidden"
+            aria-label="Open menu"
+          >
+            <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Phone menu. It starts hidden. The script at the bottom opens it. -->
+        <div id="mobile-menu" class="mt-4 hidden rounded-2xl bg-white p-4 shadow-lg lg:hidden">
+          <a href="#" class="block py-2 text-sm font-medium text-gray-700">Company</a>
+          <a href="#" class="block py-2 text-sm font-medium text-gray-700">Feature</a>
+          <a href="#" class="block py-2 text-sm font-medium text-gray-700">Pricing</a>
+          <a href="#" class="block py-2 text-sm font-medium text-gray-700">Log In</a>
+          <a
+            href="#"
+            class="mt-2 block rounded-lg bg-[#3B5AFE] py-2.5 text-center text-sm font-semibold text-white"
+          >
+            Try Free
+          </a>
+        </div>
+      </header>
+
+      <!-- Hero: text on the left, picture on the right -->
+      <div
+        class="mx-auto flex max-w-6xl flex-col-reverse items-center gap-10 px-6 pb-8 pt-8 lg:flex-row lg:pt-14"
+      >
+        <!-- Left side: words and buttons -->
+        <div class="w-full text-center lg:w-1/2 lg:text-left">
+          <span class="inline-block rounded-full bg-[#e8ebfb] px-4 py-1.5 text-sm font-medium text-[#6d72a0]">
+            Welcome QuickSpace
+          </span>
+
+          <h1 class="mt-6 text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">
+            Satisfied Customer<br />
+            Is the Best Business<br />
+            Strategy
+          </h1>
+
+          <p class="mx-auto mt-5 max-w-md text-sm leading-relaxed text-gray-500 lg:mx-0 lg:text-base">
+            Backed with vast experience and fully up to date skills
+            set, at Enuke Software offer the best in class
+            E-Prescription solution
+          </p>
+
+          <div class="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
+            <a
+              href="#"
+              class="w-full rounded-lg bg-[#3B5AFE] px-8 py-3 text-center font-semibold text-white shadow-lg shadow-blue-200 hover:bg-[#2f49e6] sm:w-auto"
+            >
+              Try Free
+            </a>
+
+            <a href="#" class="flex items-center gap-3 font-semibold">
+              <span class="flex h-9 w-9 items-center justify-center rounded-full border-2 border-[#1a144b]">
+                <!-- small play triangle -->
+                <svg viewBox="0 0 24 24" class="ml-0.5 h-3 w-3" fill="currentColor">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </span>
+              View Demo
+            </a>
+          </div>
+        </div>
+
+        <!-- Right side: person and floating cards -->
+        <div class="relative mx-auto h-[460px] w-full max-w-md lg:w-1/2">
+          <!-- Soft blue square behind the person -->
+          <div class="absolute left-1/2 top-28 h-72 w-64 -translate-x-1/2 rounded-[2rem] bg-[#d7e3fb]"></div>
+
+          <!-- The person is drawn with simple shapes -->
+          <svg viewBox="0 0 300 440" class="absolute bottom-0 left-1/2 h-[430px] w-[300px] -translate-x-1/2">
+            <!-- pants -->
+            <rect x="112" y="328" width="34" height="100" rx="12" fill="#3B82F6" />
+            <rect x="156" y="328" width="34" height="100" rx="12" fill="#2563EB" />
+
+            <!-- shirt -->
+            <path
+              d="M96 218 C108 186 128 174 150 174 C172 174 192 186 204 218 L216 328 L84 328 Z"
+              fill="#A78BFA"
+            />
+
+            <!-- neck -->
+            <rect x="137" y="160" width="26" height="22" rx="8" fill="#E8B896" />
+
+            <!-- blue hair sits behind the face -->
+            <ellipse cx="150" cy="104" rx="52" ry="60" fill="#4DA3FF" />
+            <!-- face covers the lower part, so the blue left on top looks like hair -->
+            <ellipse cx="150" cy="128" rx="40" ry="44" fill="#F6C7A4" />
+
+            <!-- eyes and smile -->
+            <ellipse cx="136" cy="124" rx="4" ry="5" fill="#243044" />
+            <ellipse cx="166" cy="124" rx="4" ry="5" fill="#243044" />
+            <path
+              d="M136 148 Q150 162 166 148"
+              fill="none"
+              stroke="#E08A6A"
+              stroke-width="2.5"
+              stroke-linecap="round"
+            />
+
+            <!-- crossed arms -->
+            <path
+              d="M90 220 C70 262 112 302 162 310 C180 312 186 296 168 288 C128 274 104 246 114 216 Z"
+              fill="#9176E4"
+            />
+            <path
+              d="M210 218 C234 258 196 298 148 304 C130 306 124 290 142 284 C182 270 202 244 190 214 Z"
+              fill="#B79AF6"
+            />
+            <!-- hands -->
+            <ellipse cx="156" cy="294" rx="15" ry="11" fill="#F6C7A4" transform="rotate(-18 156 294)" />
+            <ellipse cx="176" cy="280" rx="13" ry="10" fill="#F8D0B0" transform="rotate(12 176 280)" />
+          </svg>
+
+          <!-- Card: Great Designer -->
+          <div class="absolute left-0 top-8 z-10 flex items-center gap-2 rounded-xl bg-white px-3 py-2 shadow-lg">
+            <svg viewBox="0 0 40 40" class="h-8 w-8">
+              <circle cx="20" cy="20" r="20" fill="#F6D3BE" />
+              <circle cx="20" cy="18" r="8" fill="#F3B892" />
+              <path d="M8 16 Q20 4 32 16 Q28 10 20 10 Q12 10 8 16 Z" fill="#6B3A22" />
+              <circle cx="17" cy="18" r="1" fill="#333" />
+              <circle cx="23" cy="18" r="1" fill="#333" />
+            </svg>
+            <div>
+              <p class="text-xs font-semibold">Great Designer</p>
+              <p class="text-[11px] tracking-wider text-amber-400">★★★★★</p>
+            </div>
+          </div>
+
+          <!-- Card: Gavin Henry -->
+          <div
+            class="absolute right-0 top-56 z-10 flex items-center gap-2 rounded-xl bg-white px-3 py-2 shadow-lg"
+          >
+            <svg viewBox="0 0 40 40" class="h-9 w-9">
+              <circle cx="20" cy="20" r="20" fill="#F59E4A" />
+              <circle cx="20" cy="16" r="6" fill="#FDE7D0" />
+              <ellipse cx="20" cy="30" rx="10" ry="7" fill="#FDE7D0" />
+            </svg>
+            <div class="pr-2">
+              <p class="text-xs font-semibold">Gavin Henry</p>
+              <p class="text-[11px] text-gray-400">1m ago</p>
+            </div>
+            <span class="flex h-6 w-6 items-center justify-center rounded-full bg-[#7C6BF2] text-xs font-bold text-white">
+              1
+            </span>
+          </div>
+
+          <!-- Card: Notification -->
+          <div class="absolute bottom-6 left-0 z-10 flex items-center gap-3 rounded-xl bg-white px-3 py-2 shadow-lg">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-[#ffe8e0]">
+              <svg viewBox="0 0 24 24" class="h-5 w-5 text-[#f27b63]" fill="currentColor">
+                <path
+                  d="M12 2a6 6 0 00-6 6v3.1c0 .7-.3 1.4-.8 1.9L4 14.5V16h16v-1.5l-1.2-1.5a2.7 2.7 0 01-.8-1.9V8a6 6 0 00-6-6zm0 20a2.5 2.5 0 002.4-2h-4.8A2.5 2.5 0 0012 22z"
+                />
+              </svg>
+            </span>
+            <div>
+              <p class="text-[11px] text-gray-400">Notification</p>
+              <p class="text-xs font-medium leading-snug text-gray-700">
+                Send a message to<br />
+                Ilya Zinchenko
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Company logos under the hero -->
+      <div class="mx-auto mt-6 flex max-w-5xl flex-wrap items-center justify-center gap-x-12 gap-y-6 px-6 pb-16 text-gray-400">
+        <div class="flex items-center gap-2">
+          <span class="text-lg font-bold tracking-tight text-gray-500">A|B</span>
+          <span class="text-[11px] font-semibold leading-tight">CALEY<br />PEACE</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-lg font-bold text-gray-500">DS</span>
+          <span class="text-[11px] font-semibold leading-tight">DESIGN<br />STUDIO</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-lg font-bold text-gray-500">HR</span>
+          <span class="text-[11px] font-semibold leading-tight">HARRISON<br />INDUSTRY CO</span>
+        </div>
+        <div class="text-center">
+          <p class="font-serif text-lg leading-none text-gray-500">Barbecue</p>
+          <p class="text-[10px] tracking-widest">ESTD 1960</p>
+        </div>
+      </div>
+    </section>
+
+        <!-- end of Section 1 Win: navbar + hero -->
+
     <section>
-        <!-- Section 1 Win-->
+      <!-- Section 2 Meji-->
     </section>
     <section>
-        <!-- Section 2 Meji-->
+      <!-- Section 1 Ko-->
     </section>
     <section>
-        <!-- Section 1 Ko-->
+      <!-- Section 1 Poon-->
     </section>
-    <section>
-        <!-- Section 1 Poon-->
-    </section>
-</body>
+
+    <script>
+      // Phone only: show or hide the menu when the button is clicked
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuBtn.addEventListener("click", function () {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
 </html>
